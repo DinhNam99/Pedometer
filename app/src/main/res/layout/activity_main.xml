@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:textSize="35sp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/today"
+            android:textStyle="bold"
+            android:textColor="#CC0000"
+    />
+
+    <org.eazegraph.lib.charts.PieChart
+            xmlns:eaze="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/piechart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            eaze:egLegendHeight="0dp"
+            eaze:egInnerPadding="75"
+            eaze:egHighlightStrength="1"
+            android:layout_below="@+id/today"
+    />
+
+    <TextView
+            android:id="@+id/steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:gravity="center"
+            android:textSize="23sp"
+            android:text="6000,00"/>
+    <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/steps"
+            android:layout_centerHorizontal="true"
+            android:text="steps"
+            android:textSize="20sp"/>
+    <LinearLayout
+            android:id="@+id/averageandtotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/piechart"
+            android:layout_marginTop="20dp">
+
+        <TextView
+                android:id="@+id/average"
+                android:text="1808"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:text="180899"
+                android:id="@+id/total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/averageandtotaltext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/averageandtotal">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Average"/>
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Total"/>
+    </LinearLayout>
+
+    <org.eazegraph.lib.charts.BarChart
+            xmlns:eaze="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/averageandtotaltext"
+            eaze:egLegendHeight="35dp"
+            eaze:egShowValues="true"/>
+
+</RelativeLayout>
